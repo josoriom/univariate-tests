@@ -13,7 +13,16 @@ export function grubbs(values: number[], options: Options = {}) {
   const meanValue = mean(values);
   const std = standardDeviation(values);
   const test = [];
-  if (values.length < 3) return { criticalValue: undefined, test: []}
+  if (values.length < 3) {
+    for (const value of values) {
+      test.push({
+        value,
+        score: 0,
+        pass: undefined,
+      });
+    }
+    return { criticalValue: undefined, test };
+  }
   const criticalValue: number = table[values.length - 3][alphas.indexOf(alpha)];
   for (const value of values) {
     const score = Math.abs(value - meanValue) / std;
