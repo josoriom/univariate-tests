@@ -52,9 +52,9 @@ describe('test grubbs function 8 values', () => {
     expect(test[3].pass).toStrictEqual(false);
     expect(test[4].result).toBeDeepCloseTo(0.56903812, 8);
     expect(test[4].pass).toStrictEqual(true);
-    expect(test[5].result).toBeDeepCloseTo(0.65982560, 8);
+    expect(test[5].result).toBeDeepCloseTo(0.6598256, 8);
     expect(test[5].pass).toStrictEqual(true);
-    expect(test[6].result).toBeDeepCloseTo(0.75055280, 8);
+    expect(test[6].result).toBeDeepCloseTo(0.7505528, 8);
     expect(test[6].pass).toStrictEqual(true);
     expect(test[7].result).toBeDeepCloseTo(0.63549353, 8);
     expect(test[7].pass).toStrictEqual(true);

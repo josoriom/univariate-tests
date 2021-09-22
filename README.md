@@ -32,7 +32,7 @@ console.log(test[0]); // { value: 10.45, result: 0.15378928962176208, pass: true
 
 [npm-image]: https://img.shields.io/npm/v/univariate-tests.svg
 [npm-url]: https://www.npmjs.com/package/univariate-tests
-[ci-image]: https://github.com/josoriom/univariate-tests/workflows/Node.js%20CI/badge.svg?branch=main
+[ci-image]: https://github.com/josoriom/univariate-tests/workflows/Node.js%20CI/badge.svg?branch=master
 [ci-url]: https://github.com/josoriom/univariate-tests/actions?query=workflow%3A%22Node.js+CI%22
 [codecov-image]: https://img.shields.io/codecov/c/github/josoriom/univariate-tests.svg
 [codecov-url]: https://codecov.io/gh/josoriom/univariate-tests
