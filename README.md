@@ -5,7 +5,7 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-Univariate tests.
+Univariate tests to detect outlier.
 
 **Tests available**
 

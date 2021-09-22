@@ -5,14 +5,15 @@ import raw from './data/grubbs.json';
 
 const { table, alphas } = raw as Table;
 /**
- * My module
- * @returns A very important number
+ * Grubbs
+ * @returns the result of testing an array of values
  */
 export function grubbs(values: number[], options: Options = {}) {
   const { alpha = 0.05 } = options;
   const meanValue = mean(values);
   const std = standardDeviation(values);
   const test = [];
+  if (values.length < 3) return { criticalValue: undefined, test: []}
   const criticalValue: number = table[values.length - 3][alphas.indexOf(alpha)];
   for (const value of values) {
     const score = Math.abs(value - meanValue) / std;
