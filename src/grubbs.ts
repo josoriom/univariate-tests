@@ -14,12 +14,12 @@ export function grubbs(values: number[], options: Options = {}) {
   const std = standardDeviation(values);
   const test = [];
   const criticalValue: number = table[values.length - 3][alphas.indexOf(alpha)];
-  for (let value of values) {
-    const calculatedValue = Math.abs(value - meanValue) / std;
+  for (const value of values) {
+    const score = Math.abs(value - meanValue) / std;
     test.push({
       value,
-      result: calculatedValue,
-      pass: calculatedValue > criticalValue ? false : true,
+      score,
+      pass: score > criticalValue ? false : true,
     });
   }
   return { criticalValue, test };

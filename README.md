@@ -23,7 +23,7 @@ import { grubbs } from 'univariate-tests';
 const testValues = [10.45, 10.26, 10.49, 10.36, 10.53, 10.77];
 const { test, criticalValue } = grubbs(testValues, { alpha: 0.05 });
 console.log(criticalValue); // 1.82
-console.log(test[0]); // { value: 10.45, result: 0.15378928962176208, pass: true }  
+console.log(test[0]); // { value: 10.45, score: 0.15378928962176208, pass: true }  
 ```
 
 ## License
