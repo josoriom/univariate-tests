@@ -54,7 +54,10 @@
   },
   "dependencies": {
     "jest-matcher-deep-close-to": "^2.0.1",
+    "ml-array-max": "^1.2.3",
     "ml-array-mean": "^1.1.5",
-    "ml-array-standard-deviation": "^1.1.7"
+    "ml-array-min": "^1.2.2",
+    "ml-array-standard-deviation": "^1.1.7",
+    "ml-spectra-processing": "^6.8.0"
   }
 }

@@ -8,7 +8,10 @@ describe('test grubbs function 10 values', () => {
   const testValues = [
     10.45, 10.26, 10.49, 10.36, 10.53, 10.77, 10.4, 10.4, 5.56, 10.88,
   ];
-  const { test, criticalValue } = grubbs(testValues, { alpha: 0.05 });
+  const { test, criticalValue } = grubbs(testValues, {
+    type: 'alphas',
+    value: 0.05,
+  });
 
   it('Test 1 outlier', () => {
     expect(criticalValue).toStrictEqual(2.18);
@@ -39,7 +42,10 @@ describe('test grubbs function 8 values', () => {
   const testValues = [
     2.699, 2.3979, 2.0969, 10.7959, 1.4949, 1.1937, 0.8927, 5.4911,
   ];
-  const { test, criticalValue } = grubbs(testValues, { alpha: 0.05 });
+  const { test, criticalValue } = grubbs(testValues, {
+    type: 'alphas',
+    value: 0.05,
+  });
   it('Test 2 outlier', () => {
     expect(criticalValue).toStrictEqual(2.03);
     expect(test[0].score).toBeDeepCloseTo(0.20609918, 8);
