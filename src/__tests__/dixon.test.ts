@@ -4,14 +4,11 @@ import { dixon } from '../dixon';
 
 expect.extend({ toBeDeepCloseTo });
 
-describe('test grubbs function 10 values', () => {
+describe('test dixon function 10 values', () => {
   const testValues = [
     20.45, 10.26, 10.49, 10.36, 10.53, 10.77, 10.4, 10.4, 5.56, 10.88,
   ];
-  const { test, criticalValue } = dixon(testValues, {
-    type: 'alphas',
-    value: 0.05,
-  });
+  const { test, criticalValue } = dixon(testValues);
 
   it('Test 1 outlier', () => {
     expect(criticalValue).toStrictEqual(0.466);
@@ -38,14 +35,11 @@ describe('test grubbs function 10 values', () => {
   });
 });
 
-describe('test grubbs function 8 values', () => {
+describe('test dixon function 8 values', () => {
   const testValues = [
     2.699, 2.3979, 2.0969, 10.7959, 1.4949, 1.1937, 0.8927, 5.4911,
   ];
-  const { test, criticalValue } = dixon(testValues, {
-    type: 'alphas',
-    value: 0.05,
-  });
+  const { test, criticalValue } = dixon(testValues);
 
   it('Test 2 outlier', () => {
     expect(criticalValue).toStrictEqual(0.526);
@@ -65,5 +59,17 @@ describe('test grubbs function 8 values', () => {
     expect(test[6].pass).toStrictEqual(true);
     expect(test[7].score).toBeDeepCloseTo(0.53566523, 8);
     expect(test[7].pass).toStrictEqual(false);
+  });
+});
+
+describe('test dixon for less than 3 values', () => {
+  const testValues = [2.699, 2.3979];
+  const { test, criticalValue } = dixon(testValues);
+  it('Test 2 values', () => {
+    expect(criticalValue).toBeUndefined();
+    expect(test).toStrictEqual([
+      { pass: undefined, score: 0, value: 2.699 },
+      { pass: undefined, score: 0, value: 2.3979 },
+    ]);
   });
 });

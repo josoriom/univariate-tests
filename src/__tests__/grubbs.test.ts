@@ -8,10 +8,8 @@ describe('test grubbs function 10 values', () => {
   const testValues = [
     10.45, 10.26, 10.49, 10.36, 10.53, 10.77, 10.4, 10.4, 5.56, 10.88,
   ];
-  const { test, criticalValue } = grubbs(testValues, {
-    type: 'alphas',
-    value: 0.05,
-  });
+
+  const { test, criticalValue } = grubbs(testValues);
 
   it('Test 1 outlier', () => {
     expect(criticalValue).toStrictEqual(2.18);
@@ -42,10 +40,9 @@ describe('test grubbs function 8 values', () => {
   const testValues = [
     2.699, 2.3979, 2.0969, 10.7959, 1.4949, 1.1937, 0.8927, 5.4911,
   ];
-  const { test, criticalValue } = grubbs(testValues, {
-    type: 'alphas',
-    value: 0.05,
-  });
+
+  const { test, criticalValue } = grubbs(testValues);
+
   it('Test 2 outlier', () => {
     expect(criticalValue).toStrictEqual(2.03);
     expect(test[0].score).toBeDeepCloseTo(0.20609918, 8);
@@ -64,5 +61,17 @@ describe('test grubbs function 8 values', () => {
     expect(test[6].pass).toStrictEqual(true);
     expect(test[7].score).toBeDeepCloseTo(0.63549353, 8);
     expect(test[7].pass).toStrictEqual(true);
+  });
+});
+
+describe('test grubbs for less than 3 values', () => {
+  const testValues = [2.699, 2.3979];
+  const { test, criticalValue } = grubbs(testValues);
+  it('Test 2 values', () => {
+    expect(criticalValue).toBeUndefined();
+    expect(test).toStrictEqual([
+      { pass: undefined, score: 0, value: 2.699 },
+      { pass: undefined, score: 0, value: 2.3979 },
+    ]);
   });
 });

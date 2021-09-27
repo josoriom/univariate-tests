@@ -24,20 +24,12 @@ export function dixon(values: number[], options: Options = {}) {
     table[values.length - 3][confidence[type].indexOf(value)];
   const sortedValues = values.sort((a, b) => a - b);
   const scores: number[] = [];
-  for (let i = 0; i < sortedValues.length; i++) {
-    if (i !== sortedValues.length - 1) {
-      const value = sortedValues[i];
-      const closestValue = getClosestValue(sortedValues, value);
-      scores.push(
-        Math.abs(value - closestValue) /
-          (sortedValues[sortedValues.length - 1] - sortedValues[0]),
-      );
-    } else {
-      const minValue = sortedValues[0];
-      const previousValue = sortedValues[i - 1];
-      const value = sortedValues[i];
-      scores.push((value - previousValue) / (value - minValue));
-    }
+  for (const value of sortedValues) {
+    const closestValue = getClosestValue(sortedValues, value);
+    scores.push(
+      Math.abs(value - closestValue) /
+        (sortedValues[sortedValues.length - 1] - sortedValues[0]),
+    );
   }
 
   for (let i = 0; i < values.length; i++) {

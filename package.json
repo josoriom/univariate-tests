@@ -1,6 +1,6 @@
 {
   "name": "univariate-tests",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Univariate tests",
   "main": "./lib/index.js",
   "module": "./lib-esm/index.js",
@@ -59,5 +59,8 @@
     "ml-array-min": "^1.2.2",
     "ml-array-standard-deviation": "^1.1.7",
     "ml-spectra-processing": "^6.8.0"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
