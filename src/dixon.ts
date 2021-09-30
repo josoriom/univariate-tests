@@ -1,4 +1,6 @@
 // dixon_table.json: Dean, R. B., & Dixon, W. J. (1951). Simplified statistics for small numbers of observations. Analytical chemistry, 23(4), 636-638.
+import { xFindClosestIndex } from 'ml-spectra-processing';
+
 import raw from './data/dixon_table.json';
 import { Table } from './types/Table';
 
@@ -53,37 +55,4 @@ function getClosestValue(array: number[], target: number): number {
   values.splice(targetIndex, targetIndex + 1);
   const closestIndex = xFindClosestIndex(values, target);
   return values[closestIndex];
-}
-
-// https://github.com/mljs/spectra-processing/blob/master/src/x/xFindClosestIndex.js
-/**
- * Returns the closest index of a `target` in an ordered array
- * @param {array<Number>} array
- * @param {number} target
- */
-
-function xFindClosestIndex(array: number[], target: number) {
-  let low = 0;
-  let high = array.length - 1;
-  let middle = 0;
-  while (high - low > 1) {
-    middle = low + ((high - low) >> 1);
-    if (array[middle] < target) {
-      low = middle;
-    } else if (array[middle] > target) {
-      high = middle;
-    } else {
-      return middle;
-    }
-  }
-
-  if (low < array.length - 1) {
-    if (Math.abs(target - array[low]) < Math.abs(array[low + 1] - target)) {
-      return low;
-    } else {
-      return low + 1;
-    }
-  } else {
-    return low;
-  }
 }
