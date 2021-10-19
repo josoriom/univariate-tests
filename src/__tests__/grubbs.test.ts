@@ -12,27 +12,27 @@ describe('test grubbs function 10 values', () => {
   const { test, criticalValue } = grubbs(testValues);
 
   it('Test 1 outlier', () => {
-    expect(criticalValue).toStrictEqual(2.18);
+    expect(criticalValue).toBe(2.18);
     expect(test[0].score).toBeDeepCloseTo(0.27939652, 8);
-    expect(test[0].pass).toStrictEqual(true);
+    expect(test[0].pass).toBe(true);
     expect(test[1].score).toBeDeepCloseTo(0.15874802, 8);
-    expect(test[1].pass).toStrictEqual(true);
+    expect(test[1].pass).toBe(true);
     expect(test[2].score).toBeDeepCloseTo(0.3047962, 8);
-    expect(test[2].pass).toStrictEqual(true);
+    expect(test[2].pass).toBe(true);
     expect(test[3].score).toBeDeepCloseTo(0.22224723, 8);
-    expect(test[3].pass).toStrictEqual(true);
+    expect(test[3].pass).toBe(true);
     expect(test[4].score).toBeDeepCloseTo(0.33019589, 8);
-    expect(test[4].pass).toStrictEqual(true);
+    expect(test[4].pass).toBe(true);
     expect(test[5].score).toBeDeepCloseTo(0.48259399, 8);
-    expect(test[5].pass).toStrictEqual(true);
+    expect(test[5].pass).toBe(true);
     expect(test[6].score).toBeDeepCloseTo(0.24764691, 8);
-    expect(test[6].pass).toStrictEqual(true);
+    expect(test[6].pass).toBe(true);
     expect(test[7].score).toBeDeepCloseTo(0.24764691, 8);
-    expect(test[7].pass).toStrictEqual(true);
+    expect(test[7].pass).toBe(true);
     expect(test[8].score).toBeDeepCloseTo(2.82571484, 8);
-    expect(test[8].pass).toStrictEqual(false);
+    expect(test[8].pass).toBe(false);
     expect(test[9].score).toBeDeepCloseTo(0.55244312, 8);
-    expect(test[9].pass).toStrictEqual(true);
+    expect(test[9].pass).toBe(true);
   });
 });
 
@@ -44,23 +44,23 @@ describe('test grubbs function 8 values', () => {
   const { test, criticalValue } = grubbs(testValues);
 
   it('Test 2 outlier', () => {
-    expect(criticalValue).toStrictEqual(2.03);
+    expect(criticalValue).toBe(2.03);
     expect(test[0].score).toBeDeepCloseTo(0.20609918, 8);
-    expect(test[0].pass).toStrictEqual(true);
+    expect(test[0].pass).toBe(true);
     expect(test[1].score).toBeDeepCloseTo(0.29685652, 8);
-    expect(test[1].pass).toStrictEqual(true);
+    expect(test[1].pass).toBe(true);
     expect(test[2].score).toBeDeepCloseTo(0.38758372, 8);
-    expect(test[2].pass).toStrictEqual(true);
+    expect(test[2].pass).toBe(true);
     expect(test[3].score).toBeDeepCloseTo(2.23446244, 8);
-    expect(test[3].pass).toStrictEqual(false);
+    expect(test[3].pass).toBe(false);
     expect(test[4].score).toBeDeepCloseTo(0.56903812, 8);
-    expect(test[4].pass).toStrictEqual(true);
+    expect(test[4].pass).toBe(true);
     expect(test[5].score).toBeDeepCloseTo(0.6598256, 8);
-    expect(test[5].pass).toStrictEqual(true);
+    expect(test[5].pass).toBe(true);
     expect(test[6].score).toBeDeepCloseTo(0.7505528, 8);
-    expect(test[6].pass).toStrictEqual(true);
+    expect(test[6].pass).toBe(true);
     expect(test[7].score).toBeDeepCloseTo(0.63549353, 8);
-    expect(test[7].pass).toStrictEqual(true);
+    expect(test[7].pass).toBe(true);
   });
 });
 
