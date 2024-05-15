@@ -38,7 +38,7 @@ export function dixon(values: number[], options: Options = {}) {
     test.push({
       value: values[i],
       score: scores[i],
-      pass: scores[i] > criticalValue ? false : true,
+      pass: scores[i] < criticalValue,
     });
   }
   return { criticalValue, test };

@@ -28,11 +28,7 @@ export function grubbs(values: number[], options: Options = {}) {
     table[values.length - 3][confidence[type].indexOf(value)];
   for (const value of values) {
     const score = Math.abs(value - meanValue) / std;
-    test.push({
-      value,
-      score,
-      pass: score > criticalValue ? false : true,
-    });
+    test.push({ value, score, pass: score < criticalValue });
   }
   return { criticalValue, test };
 }

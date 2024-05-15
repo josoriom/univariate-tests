@@ -2,12 +2,11 @@
   "name": "univariate-tests",
   "version": "0.0.9",
   "description": "Univariate tests",
-  "main": "./lib/index.js",
-  "module": "./lib-esm/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "index.js",
   "keywords": [],
   "author": "Wargner M, Javier Osorio M.",
   "license": "MIT",
+  "type": "module",
   "files": [
     "src",
     "lib",
@@ -42,23 +41,24 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
-    "cheminfo-build": "^1.1.11",
-    "eslint": "^8.0.1",
-    "eslint-config-cheminfo-typescript": "^10.1.1",
-    "jest": "^27.3.1",
-    "prettier": "^2.4.1",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^27.0.7",
-    "typescript": "^4.4.4"
+    "@types/eslint": "^8.56.10",
+    "@types/jest": "^29.5.12",
+    "cheminfo-build": "^1.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-cheminfo-typescript": "^12.4.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.7",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
-    "jest-matcher-deep-close-to": "^2.0.1",
-    "ml-array-max": "^1.2.3",
-    "ml-array-mean": "^1.1.5",
-    "ml-array-min": "^1.2.2",
-    "ml-array-standard-deviation": "^1.1.7",
-    "ml-spectra-processing": "^6.8.0"
+    "jest-matcher-deep-close-to": "^3.0.2",
+    "ml-array-max": "^1.2.4",
+    "ml-array-mean": "^1.1.6",
+    "ml-array-min": "^1.2.3",
+    "ml-array-standard-deviation": "^1.1.8",
+    "ml-spectra-processing": "^14.5.0"
   },
   "directories": {
     "lib": "lib"
